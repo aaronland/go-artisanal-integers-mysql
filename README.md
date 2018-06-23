@@ -2,6 +2,19 @@
 
 No, really.
 
+## Caveats
+
+### DSN
+
+Although [the
+documentation](https://github.com/go-sql-driver/mysql#dsn-data-source-name) for
+the `go-sql-driver/mysql` package suggests that you can pass a DSN string
+_without_ a password (for example `root:/@integers`) in practice that does not
+appear to be case.
+
+Specifically any attempt to query the database will fail with a `"Error 1046: No
+database selected\n"` error.
+
 ## Schema
 
 ```

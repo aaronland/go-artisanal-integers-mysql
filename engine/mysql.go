@@ -10,6 +10,7 @@ import (
 	"fmt"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/aaronland/go-artisanal-integers"
+	_ "log"
 )
 
 type MySQLEngine struct {
@@ -143,15 +144,8 @@ func (eng *MySQLEngine) NextInt() (int64, error) {
 	}
 
 	sql := fmt.Sprintf("REPLACE INTO %s (stub) VALUES(?)", eng.key)
-	st_replace, err := db.Prepare(sql)
 
-	if err != nil {
-		return -1, err
-	}
-
-	defer st_replace.Close()
-
-	result, err := st_replace.Exec("a")
+	result, err := db.Exec(sql, "a")
 
 	if err != nil {
 		return -1, err
