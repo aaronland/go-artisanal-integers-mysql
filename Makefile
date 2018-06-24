@@ -25,6 +25,7 @@ vendor-deps: rmdeps deps
 fmt:
 	go fmt *.go
 	go fmt engine/*.go
+	go fmt cmd/*.go
 
 bin:    self
 	if test ! -d bin; then mkdir bin; fi

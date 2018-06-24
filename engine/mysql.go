@@ -8,8 +8,8 @@ import (
 	"database/sql"
 	"errors"
 	"fmt"
-	_ "github.com/go-sql-driver/mysql"
 	"github.com/aaronland/go-artisanal-integers"
+	_ "github.com/go-sql-driver/mysql"
 	_ "log"
 )
 
@@ -196,7 +196,7 @@ func (eng *MySQLEngine) set_autoincrement(db *sql.DB) error {
 }
 
 func (eng *MySQLEngine) Close() error {
-     return nil
+	return nil
 }
 
 func (eng *MySQLEngine) connect() (*sql.DB, error) {
