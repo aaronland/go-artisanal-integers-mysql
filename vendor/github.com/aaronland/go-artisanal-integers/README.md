@@ -2,77 +2,10 @@
 
 No, really.
 
-## Caveats
+## Documentation
 
-This is absolutely _not_ ready for use yet. Proceed with caution.
+Documentation is incomplete at this time.
 
-## Install
-
-You will need to have both `Go` and the `make` programs installed on your computer. Assuming you do just type:
-
-```
-make bin
-```
-
-All of this package's dependencies are bundled with the code in the `vendor` directory.
-
-## Usage
-
-Everything is in flux. This will be updated soon.
-
-## Interfaces
-
-### Client
-
-```
-type Client interface {
-	NextInt() (int64, error)
-}
-```
-
-### Engine
-
-An "engine" is the interface between your code and an underlying data model (typically a database) for minting artisanal integers. The interface looks like this:
-
-```
-type Engine interface {
-	NextInt() (int64, error)
-	LastInt() (int64, error)
-	SetLastInt(int64) error
-	SetKey(string) error
-	SetOffset(int64) error
-	SetIncrement(int64) error
-	Close() error
-}
-```
-
-### Service
-
-```
-type Service interface {
-	NextInt() (int64, error)
-	LastInt() (int64, error)
-}
-```
-
-### Server
-
-```
-type Server interface {
-	ListenAndServe(Service) error
-}
-```
-
-## Tools
-
-Everything is in flux. This will be updated soon.
-
-## Engines
-
-* https://github.com/aaronland/go-artisanal-integers-mysql
-* https://github.com/aaronland/go-artisanal-integers-redis
-* https://github.com/aaronland/go-artisanal-integers-rqlite
-* https://github.com/aaronland/go-artisanal-integers-summitdb
 
 ## See also
 
